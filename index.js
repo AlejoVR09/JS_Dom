@@ -42,13 +42,16 @@ switch (option) {
         let ol = document.querySelector('ol')
         let olContent = document.querySelectorAll('ol>li')
         let ul = document.createElement('ul')
+        ol.replaceWith(ul)
         olContent.forEach(element => {
             if(element.textContent!='Preparar el almuerzo'){
                 ul.appendChild(element)
-            }
-            
+            } 
         })
-        ol.replaceWith(ul)
+        
+        
+
+
         break;
 
     case '3':
