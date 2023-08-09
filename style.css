@@ -18,5 +18,15 @@ main {
 }
 
 .classUl {
-    
+    font-style: italic;
+}
+
+.fullfiled {
+    background-color: green;
+    color: aliceblue;
+}
+
+.failed {
+    background-color: red;
+    color: aliceblue;
 }

@@ -7,6 +7,7 @@ ex_2.style.display='none'
 ex_1.style.display='none'
 
 let div
+let h1
 let p
 let p_inside
 let text
@@ -15,11 +16,11 @@ let option=prompt('1.Ejercicio 1\n2.Ejercicio 2\n3.Ejercicio 3')
 switch (option) {
     case '1':
         ex_1.style.display='block'
-        let h1 = document.createElement('h1')
+        h = document.createElement('h1')
         text ='my presentation'
-        h1.textContent=text
+        h.textContent=text
 
-        h1.classList.add('h1Add')
+        h.classList.add('h1Add')
         
         div=document.querySelector('#ex_1>div')
         
@@ -39,15 +40,34 @@ switch (option) {
 
     case '2':
         ex_2.style.display='block'
+
+        h = document.querySelector('#ex_2>h2')
+        h.classList.add('classUl')
+
         let ol = document.querySelector('ol')
         let olContent = document.querySelectorAll('ol>li')
         let ul = document.createElement('ul')
+
         ol.replaceWith(ul)
         olContent.forEach(element => {
             if(element.textContent!='Preparar el almuerzo'){
                 ul.appendChild(element)
+                switch (element.textContent) {
+                    case 'Ir al banco':
+                        element.classList.add('failed')
+                        break;
+                    default:
+                        element.classList.add('fullfiled')
+                        break;
+                }
             } 
+            else{
+                element.textContent='Recoger a los niños'
+                element.classList.add('failed')
+                ul.appendChild(element)
+            }
         })
+
         
         
 
